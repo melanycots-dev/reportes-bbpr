@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Zarautz · Onboarding</title>
+<style>
+  :root{
+    --green:#7AB317; --green-dk:#4F7A0E; --red:#C0341D; --red-dk:#8E2415;
+    --ink:#1E2415; --cream:#F7F8F2; --white:#FFFFFF; --mute:#6B7363; --line:#E4E7DC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
+  .serif{font-family:Georgia,'Times New Roman',serif}
+
+  /* ---- HERO ---- */
+  header.hero{
+    background:var(--ink);color:var(--white);padding:64px 32px 56px;position:relative;overflow:hidden;
+  }
+  .hero .blob{position:absolute;border-radius:50%;opacity:.9}
+  .hero .b1{width:340px;height:340px;background:var(--green);top:-120px;right:-40px;opacity:.85}
+  .hero .b2{width:230px;height:230px;background:var(--red);bottom:-110px;right:120px;opacity:.8}
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+  .kick{color:var(--green);font-weight:700;letter-spacing:4px;font-size:13px;text-transform:uppercase}
+  .hero h1{font-size:clamp(40px,7vw,72px);font-weight:800;margin:10px 0 8px;line-height:1.02}
+  .hero p.sub{color:#C9D1BD;font-size:18px}
+  .hero .meta{margin-top:28px;color:#9AA68C;font-size:13px}
+  .hero .meta b{color:var(--green)}
+
+  /* ---- NAV TABS ---- */
+  nav.tabs{position:sticky;top:0;z-index:50;background:var(--ink);display:flex;flex-wrap:wrap;gap:4px;
+    padding:10px 16px;justify-content:center;border-top:1px solid rgba(255,255,255,.08)}
+  nav.tabs button{background:transparent;border:none;color:#C9D1BD;font-size:14px;font-weight:600;
+    padding:9px 15px;border-radius:999px;cursor:pointer;transition:.18s;white-space:nowrap}
+  nav.tabs button:hover{background:rgba(122,179,23,.18);color:#fff}
+  nav.tabs button.active{background:var(--green);color:#fff}
+
+  /* ---- SECTIONS ---- */
+  main{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+  section{display:none;animation:fade .35s ease}
+  section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .sec-kick{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+  .sec-title{font-size:clamp(28px,4vw,38px);font-weight:800;margin-bottom:28px}
+
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+
+  .card{background:var(--white);border-radius:16px;padding:22px 22px;box-shadow:0 6px 20px rgba(30,36,21,.08);
+    border:1px solid var(--line)}
+  .card .dot{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:9px;vertical-align:middle}
+  .card h3{font-size:17px;margin-bottom:7px;display:flex;align-items:center}
+  .card p{color:#434B3A;font-size:14.5px}
+  .card.dark{background:var(--ink);color:#E4E9DA;border:none}
+  .card.dark h3{color:#fff}
+  .card.dark p{color:#E4E9DA}
+  .card.green{background:var(--green);color:#fff;border:none}
+  .card.green h3,.card.green p{color:#fff}
+  .card.red{background:var(--red);color:#fff;border:none}
+  .card.red h3,.card.red p{color:#fff}
+
+  .stat{font-family:Georgia,serif;font-size:42px;font-weight:800;line-height:1}
+  .stat-lbl{color:var(--mute);font-size:13.5px;margin-top:10px}
+  .stat.g{color:var(--green)} .stat.r{color:var(--red)}
+
+  .star-list{list-style:none}
+  .star-list li{font-family:Georgia,serif;font-size:24px;font-weight:700;color:#fff;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+  .star-list li:last-child{border:none}
+
+  .kv b{color:var(--green-dk)}
+  .kv span{display:block;padding:5px 0}
+
+  .note ul{margin:8px 0 0 18px}
+  .note li{margin-bottom:6px;font-size:14.5px}
+
+  .banner{border-radius:16px;padding:22px 26px;margin-top:8px;color:#fff;font-size:15.5px;box-shadow:0 6px 20px rgba(30,36,21,.12)}
+  .banner.red{background:var(--red)} .banner.green{background:var(--green)}
+  .banner b{font-weight:800}
+
+  footer{background:var(--ink);color:#9AA68C;text-align:center;padding:26px;font-size:13px}
+  footer b{color:var(--green)}
+  .lead{font-size:15px;color:var(--mute);margin:-14px 0 26px;max-width:680px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="hero-inner">
+    <div class="kick">Onboarding de marca</div>
+    <h1 class="serif">Casa Zarautz</h1>
+    <p class="sub">Parrilla &amp; productos de mar · Palermo, Buenos Aires</p>
+    <div class="meta">Documento interno para el equipo · <b>BBPR Agency</b></div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-t="negocio" class="active">El negocio</button>
+  <button data-t="operacion">Operación</button>
+  <button data-t="carta">Carta &amp; cocina</button>
+  <button data-t="numeros">Números</button>
+  <button data-t="digital">Digital</button>
+  <button data-t="vision">Visión</button>
+  <button data-t="referencias">Referencias</button>
+  <button data-t="resumen">Resumen</button>
+</nav>
+
+<main>
+  <!-- NEGOCIO -->
+  <section id="negocio" class="active">
+    <div class="sec-kick" style="color:var(--green-dk)">01 · El negocio</div>
+    <h2 class="sec-title serif">Identidad y propuesta</h2>
+    <div class="grid g2">
+      <div class="card dark">
+        <h3 class="serif" style="font-size:26px">Casa Zarautz</h3>
+        <div class="kv" style="margin-top:14px;font-size:15px;line-height:1.6">
+          <span><b>Cocina</b> · Parrilla y productos de mar</span>
+          <span><b>Zona</b> · Nicaragua 5577, Palermo</span>
+          <span><b>Apertura</b> · 2026</span>
+          <span><b>Concepto</b> · Dos ambientes: Terraza (informal/familiar) y Zarautz (íntimo/exclusivo)</span>
+        </div>
+      </div>
+      <div class="grid g2" style="gap:18px">
+        <div class="card"><div class="stat g">26</div><div class="stat-lbl">empleados</div></div>
+        <div class="card"><div class="stat r">$60–80k</div><div class="stat-lbl">ticket prom. p/persona</div></div>
+        <div class="card"><div class="stat g">46 + 30</div><div class="stat-lbl">aforo Terraza + Zarautz</div></div>
+        <div class="card"><div class="stat r">ABC1 · C2</div><div class="stat-lbl">público objetivo</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERACION -->
+  <section id="operacion">
+    <div class="sec-kick" style="color:var(--red-dk)">02 · Operación</div>
+    <h2 class="sec-title serif">Cómo funciona el día a día</h2>
+    <div class="grid g3" id="ops"></div>
+  </section>
+
+  <!-- CARTA -->
+  <section id="carta">
+    <div class="sec-kick" style="color:var(--green-dk)">03 · Carta &amp; cocina</div>
+    <h2 class="sec-title serif">Lo que sale de la parrilla</h2>
+    <div class="grid g2">
+      <div class="card green">
+        <h3 style="letter-spacing:2px;font-size:14px">PLATOS ESTRELLA</h3>
+        <ul class="star-list" style="margin-top:10px">
+          <li>Entraña</li><li>Vacío / pulpón</li><li>Asado de tira</li>
+          <li>Bife de chorizo</li><li>Ojo de bife</li>
+        </ul>
+      </div>
+      <div class="grid" style="gap:14px" id="cartaCards"></div>
+    </div>
+  </section>
+
+  <!-- NUMEROS -->
+  <section id="numeros">
+    <div class="sec-kick" style="color:var(--red-dk)">04 · Números &amp; gestión</div>
+    <h2 class="sec-title serif">Estado económico y herramientas</h2>
+    <div class="grid g3">
+      <div class="card"><div class="stat g">$50 M</div><div class="stat-lbl">facturación mensual promedio</div></div>
+      <div class="card"><div class="stat r">Maxirest</div><div class="stat-lbl">sistema de gestión interno</div></div>
+      <div class="card"><div class="stat g">Sin medir</div><div class="stat-lbl">margen por plato (no relevado)</div></div>
+    </div>
+    <div class="card dark note" style="margin-top:18px">
+      <h3 style="color:var(--green);letter-spacing:2px;font-size:14px">A TENER EN CUENTA</h3>
+      <ul>
+        <li>No hay control de stock profesional ni medición de márgenes por plato.</li>
+        <li>No trabajan con señas para reservas.</li>
+        <li>Falta data de estacionalidad: no tienen relevados los meses de mayor / menor facturación.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIGITAL -->
+  <section id="digital">
+    <div class="sec-kick" style="color:var(--green-dk)">05 · Presencia digital &amp; marketing</div>
+    <h2 class="sec-title serif">Punto de partida en comunicación</h2>
+    <div class="grid g3" id="dig"></div>
+    <div class="banner red"><b>Oportunidad clave:</b> la marca comunica muy por debajo de la experiencia que ofrece. Hay mucho margen en redes, base de datos y consistencia estética.</div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision">
+    <div class="sec-kick" style="color:var(--red-dk)">06 · Visión &amp; estrategia</div>
+    <h2 class="sec-title serif">Hacia dónde quieren ir</h2>
+    <div class="grid g2">
+      <div class="card dark"><h3 style="color:var(--green);letter-spacing:2px;font-size:13px">LA MARCA EN 3 PALABRAS</h3>
+        <p class="serif" style="color:#fff;font-size:25px;font-weight:700;margin-top:8px">Familia · Exclusivo · Hospitalidad</p></div>
+      <div class="card"><h3 style="color:var(--red);letter-spacing:2px;font-size:13px">DIFERENCIAL REAL</h3>
+        <p style="margin-top:8px">La hospitalidad y excelencia en el servicio brindadas por el equipo. Cada cliente queda sorprendido por el nivel y la calidad de la materia prima.</p></div>
+    </div>
+    <div class="grid g3" style="margin-top:18px" id="goals"></div>
+  </section>
+
+  <!-- REFERENCIAS -->
+  <section id="referencias">
+    <div class="sec-kick" style="color:var(--red-dk)">06 · Visión &amp; estrategia</div>
+    <h2 class="sec-title serif">Referencias y audiencia</h2>
+    <div class="grid g2">
+      <div class="card"><h3 style="color:var(--green-dk);letter-spacing:2px;font-size:13px">REFERENTES A SEGUIR</h3>
+        <p style="margin-top:8px;font-size:16px">Bätea (España) · Catalunya · Corte Comedor · Don Julio · Fervor (Argentina)</p></div>
+      <div class="card"><h3 style="color:var(--red);letter-spacing:2px;font-size:13px">PÚBLICO OBJETIVO</h3>
+        <p style="margin-top:8px">Cliente ABC1 / C2. No identifican un perfil de cliente “no deseado”: la propuesta apunta a quien valora servicio y producto.</p></div>
+    </div>
+    <div class="banner green" style="margin-top:18px">
+      <div style="letter-spacing:2px;font-size:13px;font-weight:700;margin-bottom:10px">PARA LA ESTRATEGIA DE COMUNICACIÓN</div>
+      <p style="margin-bottom:8px"><b>Efemérides:</b> fechas de momentos familiares (Terraza) y momentos íntimos / exclusivos (Zarautz).</p>
+      <p><b>Convenios:</b> acuerdos comerciales con empresas de turismo, OSDE y La Barrera.</p>
+    </div>
+  </section>
+
+  <!-- RESUMEN -->
+  <section id="resumen">
+    <div class="sec-kick" style="color:var(--green-dk)">En resumen</div>
+    <h2 class="sec-title serif">Producto y servicio de excelencia, con una marca lista para crecer</h2>
+    <p class="lead">La gran palanca de crecimiento que identifica el propio equipo está en la comunicación: redes, consistencia estética y aprovechamiento de la base de datos. Ahí enfocamos el trabajo.</p>
+    <div class="grid g3" id="resumenCards"></div>
+  </section>
+</main>
+
+<footer>BBPR Agency · Casa Zarautz — Onboarding</footer>
+
+<script>
+  const G='var(--green)', R='var(--red)';
+  function card(title, body, color){
+    return `<div class="card"><h3><span class="dot" style="background:${color}"></span>${title}</h3><p>${body}</p></div>`;
+  }
+  document.getElementById('ops').innerHTML = [
+    ['Horarios','Terraza: lunes a lunes, 12:00–23:30. Zarautz: 20:00–23:30.',G],
+    ['Servicios','Almuerzo y cena · 1 sentada por turno (rotación variable).',R],
+    ['Reservas','Sí, vía OpenTable · con lista de espera estructurada.',G],
+    ['Ocupación','Fines de semana ~80% · Terraza 230 pax / Zarautz 90 pax semanales.',R],
+    ['Eventos privados','Sí · hasta 50 pax en Terraza y 30 en Zarautz.',G],
+    ['Delivery / Take Away','Sin delivery · Take Away disponible.',R],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('cartaCards').innerHTML = [
+    ['Opciones disponibles','Vegetarianas · Gluten free',R],
+    ['Carta por temporada','Se mantiene; rotan algunos ingredientes',G],
+    ['Proveedores','Sí, trabajan con proveedores premium / diferenciados',R],
+    ['Menú ejecutivo / degustación','No ofrecen por ahora',G],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('dig').innerHTML = [
+    ['Instagram','@casa.zarautz · publicación diaria',G],
+    ['Web propia','Sí',R],
+    ['Pauta','Performance estructurada (Meta / Google)',G],
+    ['Base de datos','Activa, pero sin email marketing ni automatizaciones',R],
+    ['Lineamiento estético','Aún sin guía clara y coherente',G],
+    ['Autoevaluación marketing','3 / 10 — sienten desaprovechada la comunicación',R],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('goals').innerHTML = [
+    ['Meta de crecimiento','Apuntan a crecer ~400% sobre la facturación actual.',G],
+    ['Modelo','Sin sucursales ni franquicias por ahora: foco en exclusividad.',R],
+    ['Qué frena hoy','La comunicación y exposición de la marca en redes.',G],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('resumenCards').innerHTML = [
+    ['Lo que ya funciona','Producto premium, servicio y hospitalidad de excelencia.',G],
+    ['La gran palanca','Comunicación: redes, estética y base de datos.',R],
+    ['Hacia dónde','Crecer en exclusividad, sin perder identidad familiar.',G],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  // Tab nav
+  const tabs=document.getElementById('tabs');
+  tabs.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b)return;
+    document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('main section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
