@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koeru Sushi · Onboarding</title>
+<style>
+  :root{
+    --violeta:#8A2BE2; --violeta-dk:#5E1C9C; --luz:#F5C78A; --luz-dk:#C8923A;
+    --ink:#0A0A0A; --cream:#F6F4F9; --white:#FFFFFF; --mute:#6B6577; --line:#E7E4EC;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
+  .serif{font-family:Georgia,'Times New Roman',serif}
+
+  /* ---- HERO ---- */
+  header.hero{
+    background:var(--ink);color:var(--white);padding:64px 32px 56px;position:relative;overflow:hidden;
+  }
+  .hero .blob{position:absolute;border-radius:50%;opacity:.9}
+  .hero .b1{width:340px;height:340px;background:var(--violeta);top:-120px;right:-40px;opacity:.85}
+  .hero .b2{width:230px;height:230px;background:var(--luz);bottom:-110px;right:120px;opacity:.7}
+  .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+  .kick{color:var(--luz);font-weight:700;letter-spacing:4px;font-size:13px;text-transform:uppercase}
+  .hero h1{font-size:clamp(40px,7vw,72px);font-weight:800;margin:10px 0 8px;line-height:1.02}
+  .hero p.sub{color:#CFC7DB;font-size:18px}
+  .hero .meta{margin-top:28px;color:#9A93A8;font-size:13px}
+  .hero .meta b{color:var(--luz)}
+
+  /* ---- NAV TABS ---- */
+  nav.tabs{position:sticky;top:0;z-index:50;background:var(--ink);display:flex;flex-wrap:wrap;gap:4px;
+    padding:10px 16px;justify-content:center;border-top:1px solid rgba(255,255,255,.08)}
+  nav.tabs button{background:transparent;border:none;color:#CFC7DB;font-size:14px;font-weight:600;
+    padding:9px 15px;border-radius:999px;cursor:pointer;transition:.18s;white-space:nowrap}
+  nav.tabs button:hover{background:rgba(138,43,226,.22);color:#fff}
+  nav.tabs button.active{background:var(--violeta);color:#fff}
+
+  /* ---- SECTIONS ---- */
+  main{max-width:1080px;margin:0 auto;padding:40px 24px 80px}
+  section{display:none;animation:fade .35s ease}
+  section.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .sec-kick{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+  .sec-title{font-size:clamp(28px,4vw,38px);font-weight:800;margin-bottom:28px}
+
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+
+  .card{background:var(--white);border-radius:16px;padding:22px 22px;box-shadow:0 6px 20px rgba(30,20,45,.08);
+    border:1px solid var(--line)}
+  .card .dot{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:9px;vertical-align:middle}
+  .card h3{font-size:17px;margin-bottom:7px;display:flex;align-items:center}
+  .card p{color:#473F55;font-size:14.5px}
+  .card.dark{background:var(--ink);color:#E7E2EE;border:none}
+  .card.dark h3{color:#fff}
+  .card.dark p{color:#E7E2EE}
+  .card.violeta{background:var(--violeta);color:#fff;border:none}
+  .card.violeta h3,.card.violeta p{color:#fff}
+  .card.luz{background:var(--luz);color:#3D2F16;border:none}
+  .card.luz h3,.card.luz p{color:#3D2F16}
+
+  .stat{font-family:Georgia,serif;font-size:42px;font-weight:800;line-height:1}
+  .stat-lbl{color:var(--mute);font-size:13.5px;margin-top:10px}
+  .stat.v{color:var(--violeta)} .stat.a{color:var(--luz-dk)}
+
+  .star-list{list-style:none}
+  .star-list li{font-family:Georgia,serif;font-size:24px;font-weight:700;color:#fff;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.20)}
+  .star-list li:last-child{border:none}
+
+  .kv b{color:var(--violeta-dk)}
+  .kv span{display:block;padding:5px 0}
+
+  .note ul{margin:8px 0 0 18px}
+  .note li{margin-bottom:6px;font-size:14.5px}
+
+  .banner{border-radius:16px;padding:22px 26px;margin-top:8px;font-size:15.5px;box-shadow:0 6px 20px rgba(30,20,45,.12)}
+  .banner.violeta{background:var(--violeta);color:#fff}
+  .banner.luz{background:var(--luz);color:#3D2F16}
+  .banner b{font-weight:800}
+
+  footer{background:var(--ink);color:#9A93A8;text-align:center;padding:26px;font-size:13px}
+  footer b{color:var(--luz)}
+  .lead{font-size:15px;color:var(--mute);margin:-14px 0 26px;max-width:680px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="hero-inner">
+    <div class="kick">Onboarding de marca</div>
+    <h1 class="serif">Koeru Sushi</h1>
+    <p class="sub">Cocina fusión · sushi &amp; ramen · Palermo, Buenos Aires</p>
+    <div class="meta">Documento interno para el equipo · <b>BBPR Agency</b></div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-t="negocio" class="active">El negocio</button>
+  <button data-t="operacion">Operación</button>
+  <button data-t="carta">Carta &amp; cocina</button>
+  <button data-t="numeros">Números</button>
+  <button data-t="digital">Digital</button>
+  <button data-t="vision">Visión</button>
+  <button data-t="referencias">Referencias</button>
+  <button data-t="resumen">Resumen</button>
+</nav>
+
+<main>
+  <!-- NEGOCIO -->
+  <section id="negocio" class="active">
+    <div class="sec-kick" style="color:var(--violeta-dk)">01 · El negocio</div>
+    <h2 class="sec-title serif">Identidad y propuesta</h2>
+    <div class="grid g2">
+      <div class="card dark">
+        <h3 class="serif" style="font-size:26px">Koeru Sushi</h3>
+        <div class="kv" style="margin-top:14px;font-size:15px;line-height:1.6">
+          <span><b>Cocina</b> · Fusión — sushi &amp; ramen, estilo Hong Kong</span>
+          <span><b>Zona</b> · Güemes 3992, Palermo (CABA)</span>
+          <span><b>Apertura</b> · 2020</span>
+          <span><b>Concepto</b> · Sushi libre y ambiente descontracturado · almuerzo, cena y post-cena (bar)</span>
+        </div>
+      </div>
+      <div class="grid g2" style="gap:18px">
+        <div class="card"><div class="stat v">9</div><div class="stat-lbl">empleados</div></div>
+        <div class="card"><div class="stat a">~$45k</div><div class="stat-lbl">ticket prom. p/persona</div></div>
+        <div class="card"><div class="stat v">80</div><div class="stat-lbl">aforo total · 45 operativo / turno</div></div>
+        <div class="card"><div class="stat a">25–50</div><div class="stat-lbl">público objetivo (años)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPERACION -->
+  <section id="operacion">
+    <div class="sec-kick" style="color:var(--luz-dk)">02 · Operación</div>
+    <h2 class="sec-title serif">Cómo funciona el día a día</h2>
+    <div class="grid g3" id="ops"></div>
+  </section>
+
+  <!-- CARTA -->
+  <section id="carta">
+    <div class="sec-kick" style="color:var(--violeta-dk)">03 · Carta &amp; cocina</div>
+    <h2 class="sec-title serif">Lo que sale de la cocina</h2>
+    <div class="grid g2">
+      <div class="card violeta">
+        <h3 style="letter-spacing:2px;font-size:14px">PLATOS ESTRELLA</h3>
+        <ul class="star-list" style="margin-top:10px">
+          <li>Sushi libre</li><li>Ramen</li><li>Entradas</li>
+          <li>Sashimis</li><li>Ceviche</li>
+        </ul>
+      </div>
+      <div class="grid" style="gap:14px" id="cartaCards"></div>
+    </div>
+  </section>
+
+  <!-- NUMEROS -->
+  <section id="numeros">
+    <div class="sec-kick" style="color:var(--luz-dk)">04 · Números &amp; gestión</div>
+    <h2 class="sec-title serif">Estado económico y herramientas</h2>
+    <div class="grid g3">
+      <div class="card"><div class="stat v">$52 M</div><div class="stat-lbl">facturación mensual promedio</div></div>
+      <div class="card"><div class="stat a">Fudo</div><div class="stat-lbl">sistema de gestión interno</div></div>
+      <div class="card"><div class="stat v">~20%</div><div class="stat-lbl">margen promedio estimado</div></div>
+    </div>
+    <div class="card dark note" style="margin-top:18px">
+      <h3 style="color:var(--luz);letter-spacing:2px;font-size:14px">A TENER EN CUENTA</h3>
+      <ul>
+        <li>Meta declarada: pasar de ~$54M a <b>$100M</b> mensuales en 12 meses (casi duplicar).</li>
+        <li>Pico histórico $70M vs piso $49M: hay estacionalidad marcada (alta jun–dic / baja ene–jun).</li>
+        <li>Costos fijos ~$44M: altos respecto del promedio; clave cuidar los meses flojos.</li>
+        <li>Sí tienen control de stock profesional y trabajan con señas para reservas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DIGITAL -->
+  <section id="digital">
+    <div class="sec-kick" style="color:var(--violeta-dk)">05 · Presencia digital &amp; marketing</div>
+    <h2 class="sec-title serif">Punto de partida en comunicación</h2>
+    <div class="grid g3" id="dig"></div>
+    <div class="banner luz" style="margin-top:18px"><b>Oportunidad clave:</b> no hay pauta ni web propia y la marca no está humanizada. La palanca #1 que el propio equipo señala para crecer es la comunicación digital.</div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision">
+    <div class="sec-kick" style="color:var(--luz-dk)">06 · Visión &amp; estrategia</div>
+    <h2 class="sec-title serif">Hacia dónde quieren ir</h2>
+    <div class="grid g2">
+      <div class="card dark"><h3 style="color:var(--luz);letter-spacing:2px;font-size:13px">LA MARCA EN 3 PALABRAS</h3>
+        <p class="serif" style="color:#fff;font-size:25px;font-weight:700;margin-top:8px">Buen producto · Atención · Acogedor</p></div>
+      <div class="card"><h3 style="color:var(--violeta-dk);letter-spacing:2px;font-size:13px">DIFERENCIAL REAL</h3>
+        <p style="margin-top:8px">La atención. Quieren que el cliente viva <b>confianza</b> y recuerde Koeru como “un lugar acogedor donde volver”.</p></div>
+    </div>
+    <div class="grid g3" style="margin-top:18px" id="goals"></div>
+  </section>
+
+  <!-- REFERENCIAS -->
+  <section id="referencias">
+    <div class="sec-kick" style="color:var(--luz-dk)">06 · Visión &amp; estrategia</div>
+    <h2 class="sec-title serif">Referencias y audiencia</h2>
+    <div class="grid g2">
+      <div class="card"><h3 style="color:var(--violeta-dk);letter-spacing:2px;font-size:13px">REFERENTES A SEGUIR</h3>
+        <p style="margin-top:8px;font-size:16px">Sushi by Bou · foco en Argentina · marcas humanizadas que siguen tendencias.</p></div>
+      <div class="card"><h3 style="color:var(--luz-dk);letter-spacing:2px;font-size:13px">PÚBLICO OBJETIVO</h3>
+        <p style="margin-top:8px">Público de 25 a 50 años en Palermo. <b>No</b> quieren atraer al público de promoción antes que calidad.</p></div>
+    </div>
+    <div class="banner violeta" style="margin-top:18px">
+      <div style="letter-spacing:2px;font-size:13px;font-weight:700;margin-bottom:10px">PARA LA ESTRATEGIA DE COMUNICACIÓN</div>
+      <p style="margin-bottom:8px"><b>Promo recurrente:</b> descuento del 25% pagando en efectivo.</p>
+      <p style="margin-bottom:8px"><b>Tono buscado:</b> marca humanizada, con tendencia y presencia constante (no solo promociones).</p>
+      <p><b>Referencias citadas a revisar:</b> Fabric · Social Sushi.</p>
+    </div>
+  </section>
+
+  <!-- RESUMEN -->
+  <section id="resumen">
+    <div class="sec-kick" style="color:var(--violeta-dk)">En resumen</div>
+    <h2 class="sec-title serif">Buen producto y servicio, con una marca lista para crecer</h2>
+    <p class="lead">La gran palanca de crecimiento que identifica el propio equipo está en la comunicación: pauta digital, marca humanizada y consistencia estética. Ahí enfocamos el trabajo.</p>
+    <div class="grid g3" id="resumenCards"></div>
+  </section>
+</main>
+
+<footer>BBPR Agency · Koeru Sushi — Onboarding</footer>
+
+<script>
+  const V='var(--violeta)', A='var(--luz-dk)';
+  function card(title, body, color){
+    return `<div class="card"><h3><span class="dot" style="background:${color}"></span>${title}</h3><p>${body}</p></div>`;
+  }
+  document.getElementById('ops').innerHTML = [
+    ['Horarios','Lunes a sábado 12:00–00:30 · domingos 18:30–00:30.',V],
+    ['Servicios','Almuerzo, cena y post-cena (bar) · 2 turnos/día · rotación de mesa ~2 hs.',A],
+    ['Reservas','Sí · trabajan con señas · lista de espera estructurada.',V],
+    ['Ocupación','Semanal ~50% · fines de semana ~100%.',A],
+    ['Temporada','Alta: junio a diciembre · baja: enero a junio.',V],
+    ['Delivery / Eventos','Delivery propio + Más Delivery (~60% salón) · Take Away sí · eventos hasta 36 pax.',A],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('cartaCards').innerHTML = [
+    ['Rentabilidad','Más rentable: ramen · menos rentable: langostinos fritos',A],
+    ['Opciones disponibles','Vegetarianas · sin lactosa',V],
+    ['Carta por temporada','Sí, cambian la carta por temporada',A],
+    ['Menú ejecutivo / degustación','Ejecutivo sí ($22.500) · degustación no',V],
+    ['Proveedores','Sí, premium / diferenciados · margen ~20%',A],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('dig').innerHTML = [
+    ['Instagram','@Koerusushi · publicación diaria',V],
+    ['TikTok / Web','TikTok sin actividad · sin web propia',A],
+    ['Pauta','No hacen pauta digital actualmente',V],
+    ['Base de datos','Activa, con automatizaciones · sin email marketing',A],
+    ['Reputación','Google My Business optimizado parcialmente · 5★ · sin Tripadvisor',V],
+    ['Autoevaluación marketing','5 / 10 — sienten la marca poco humanizada',A],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('goals').innerHTML = [
+    ['Meta de crecimiento','De ~$54M a $100M mensuales (≈+85%) en 12 meses.',V],
+    ['Modelo','Quieren franquiciar y abrir sucursales · prefieren volumen sobre exclusividad.',A],
+    ['Qué frena hoy','La comunicación digital, el miedo a sumar un socio en pauta y los mediodías flojos.',V],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  document.getElementById('resumenCards').innerHTML = [
+    ['Lo que ya funciona','Buen producto, atención y público fiel · ocupación full los fines de semana.',V],
+    ['La gran palanca','Comunicación digital: pauta, marca humanizada y estética consistente.',A],
+    ['Hacia dónde','Duplicar facturación y preparar la marca para franquiciar.',V],
+  ].map(o=>card(o[0],o[1],o[2])).join('');
+
+  // Tab nav
+  const tabs=document.getElementById('tabs');
+  tabs.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b)return;
+    document.querySelectorAll('nav.tabs button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('main section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.t).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>
