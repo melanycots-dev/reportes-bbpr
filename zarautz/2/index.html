@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Competitivo Meta Ads · La Terrazza Parrilla</title>
+<style>
+  :root{
+    --maroon:#7a1d22;
+    --maroon-deep:#5c1418;
+    --maroon-light:#a8403a;
+    --ember:#c9622f;
+    --black:#0c0707;
+    --ink:#1d1212;
+    --paper:#f8f1ec;
+    --paper-2:#ffffff;
+    --line:#e6d8d2;
+    --muted:#7a655f;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  /* PORTADA */
+  .cover{background:radial-gradient(circle at 50% 30%, #2a0e0e 0%, var(--black) 72%);color:#fff;padding:60px 24px 56px;text-align:center;}
+  .logo-lt{font-family:Georgia,"Times New Roman",serif;color:var(--maroon-light);}
+  .logo-lt .la{font-style:italic;font-size:40px;display:block;line-height:.8;margin-bottom:2px;}
+  .logo-lt .terrazza{font-size:58px;font-weight:700;letter-spacing:.06em;line-height:1;color:var(--maroon);text-shadow:0 1px 0 #3a0d0d;}
+  .logo-lt .parrilla{font-family:"Helvetica Neue",Arial,sans-serif;font-size:16px;letter-spacing:.5em;font-weight:700;color:var(--maroon-light);margin-top:6px;padding-left:.5em;}
+  .flourish{color:var(--maroon-light);opacity:.7;font-size:18px;letter-spacing:.3em;margin:10px 0 0;}
+  .cover .kicker{margin-top:28px;letter-spacing:.26em;text-transform:uppercase;font-size:12px;color:var(--ember);}
+  .cover h1{font-size:30px;margin:8px auto 0;max-width:640px;font-weight:700;color:#fff;}
+  .cover .meta{margin-top:22px;font-size:12px;color:#c2a59c;letter-spacing:.05em;}
+
+  section{padding:48px 0;border-bottom:1px solid var(--line);}
+  .step-label{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--maroon);font-weight:700;margin-bottom:8px;}
+  h2.title{font-size:29px;margin:0 0 8px;color:var(--black);font-weight:800;}
+  h3{font-size:20px;color:var(--maroon);margin:32px 0 10px;}
+  h4{font-size:15px;margin:18px 0 6px;color:var(--ember);text-transform:uppercase;letter-spacing:.04em;}
+  p{margin:0 0 14px;} a{color:var(--maroon);}
+
+  .note{background:#f6e9e3;border:1px solid var(--maroon-light);border-left:5px solid var(--maroon);border-radius:10px;padding:20px 22px;margin:22px 0;}
+  .note strong{color:var(--maroon);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:22px;}
+  .card{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .card .name{font-size:18px;font-weight:800;color:var(--black);}
+  .card .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 10px;}
+  .card .row{font-size:14px;margin:4px 0;} .card .row b{color:var(--maroon);}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:#f2ddd6;color:var(--maroon);}
+
+  table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13.5px;background:#fff;border-radius:10px;overflow:hidden;}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--black);color:var(--ember);font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+  tr:nth-child(even) td{background:#f6ece7;}
+  .lvl{font-weight:700;}
+  .lvl-alto{color:#7a1d22;} .lvl-medio{color:#b06a1f;} .lvl-bajo{color:#9a5230;}
+
+  .ol{counter-reset:item;list-style:none;padding:0;margin:18px 0 0;}
+  .ol li{counter-increment:item;position:relative;padding:14px 16px 14px 56px;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;}
+  .ol li::before{content:counter(item);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--maroon);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:720px){.two{grid-template-columns:1fr;}.logo-lt .terrazza{font-size:42px;}}
+  .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;}
+  .box.a{border-top:4px solid var(--maroon);} .box.b{border-top:4px solid var(--ember);}
+
+  .qa .q{font-weight:800;color:var(--black);margin-top:22px;}
+  .exec{background:radial-gradient(circle at 30% 20%,#2a0e0e,var(--black));color:#fff;border-radius:14px;padding:30px;margin-top:18px;}
+  .exec h3{color:var(--ember);margin-top:0;} .exec p{opacity:.95;}
+  .mini{font-size:11px;padding:2px 9px;border-radius:14px;background:#f2ddd6;color:var(--maroon);}
+  footer{padding:32px 0 60px;font-size:12px;color:var(--muted);} footer ul{padding-left:18px;}
+  .legend{font-size:12px;color:var(--muted);margin-top:10px;} .legend b{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="logo-lt">
+    <span class="la">La</span>
+    <span class="terrazza">TERRAZZA</span>
+    <div class="parrilla">PARRILLA</div>
+  </div>
+  <div class="flourish">◦ ❧ ◦</div>
+  <div class="kicker">Análisis Competitivo · Meta Ads</div>
+  <h1>Competencia de parrilla y carnes premium en Buenos Aires y mapa de oportunidades publicitarias</h1>
+  <div class="meta">Casa Zarautz · Preparado para BBPR · Junio 2026 · 🔥 Fuego</div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <span class="step-label">Nota metodológica</span>
+  <h2 class="title">Cómo leer este informe</h2>
+  <div class="note">
+    <p>No fue posible verificar en vivo, anuncio por anuncio, la <em>Meta Ad Library</em> en esta sesión (bloqueo de lectura del navegador + la biblioteca es 100% JavaScript). Para no inventar conteos, se distinguen dos niveles de evidencia:</p>
+    <p style="margin:0;"><span class="mini">✓ VERIFICADO</span> concepto, chef, barrio, ticket, seguidores y distinciones (fuentes al pie). &nbsp; <span class="mini" style="background:#f0ddc9;color:#9a5230;">◐ LECTURA DE CATEGORÍA</span> interpretación estratégica del comportamiento publicitario probable; <strong>no</strong> es conteo verificado de anuncios.</p>
+  </div>
+  <p>Logo y colores recreados según la identidad de La Terrazza (bordó sobre negro). Si se dejan los archivos originales en la carpeta, se reemplazan por los logos reales.</p>
+</section>
+
+<section>
+  <span class="step-label">Paso 1</span>
+  <h2 class="title">Mapa de competencia — Fuego</h2>
+  <p>La Terrazza es la experiencia de fuego de Casa Zarautz: carnes y parrilla a la leña de quebracho, en una terraza escondida de Palermo con ritual propio (el reloj de arena para dejar reposar la carne). Su competencia es el segmento <strong>premium de carnes</strong> porteño: parrillas de autor, steakhouses de maduración y parrillas "de diseño".</p>
+
+  <h3>Competidores directos — Parrilla premium / de autor</h3>
+  <div class="grid">
+    <div class="card"><span class="pill">PARRILLA ICÓNICA</span><div class="name">Don Julio</div><div class="tag">Palermo · ⭐ Michelin + Verde · Salón de la Fama 50 Best</div><p class="row">La parrilla argentina más famosa del mundo, pastura, maduración 21+ días. <b>~521K seg.</b> Demanda turística desbordada: el techo de notoriedad orgánica.</p></div>
+    <div class="card"><span class="pill">PARRILLA DE AUTOR</span><div class="name">La Carnicería</div><div class="tag">Palermo · Michelin Guide</div><p class="row">Parrilla y ahumados de autor, carne de pastura propia (familia Sitz), ~30 cubiertos, reserva obligada. Culto foodie. Mismos dueños que Niño Gordo.</p></div>
+    <div class="card"><span class="pill">MADURACIÓN</span><div class="name">Corte Comedor</div><div class="tag">Belgrano · Michelin Guide</div><p class="row">Especialistas en maduración y trazabilidad por corte (raza, origen, alimentación). <b>~73K seg.</b> "Carnicería + comedor": producto y relato de origen.</p></div>
+    <div class="card"><span class="pill">FUEGO HOTELERO</span><div class="name">Elena</div><div class="tag">Four Seasons, Retiro · Michelin · 101 Best Steak (#54)</div><p class="row">Carnes maduradas (bife holando 70 días, $125.000), brasserie, charcutería. <b>~73K seg.</b> Brunch icónico. El competidor de fuego con más músculo de marketing (hotel 5★).</p></div>
+  </div>
+
+  <h3>Competidores directos — Steakhouses de alta gama</h3>
+  <div class="grid">
+    <div class="card"><span class="pill">BARRA + FUEGO</span><div class="name">Fogón Asado</div><div class="tag">Palermo · #22 World's 101 Best Steak</div><p class="row">Barra que rodea la parrilla central; experiencia-show de fuego en vivo. Concepto experiencial premium, fuerte atractivo para turismo y eventos.</p></div>
+    <div class="card"><span class="pill">WAGYU</span><div class="name">Madre Rojas</div><div class="tag">Villa Crespo · #47 World's 101 Best Steak</div><p class="row">Trazabilidad y Wagyu como bandera. Steakhouse de nicho premium, relato de origen y cortes especiales.</p></div>
+    <div class="card"><span class="pill">ORGÁNICO/WAGYU</span><div class="name">Somos Asado</div><div class="tag">Palermo</div><p class="row">Carnes 100% orgánicas de pastura, Angus y Wagyu certificados, maduración 40+ días. Competidor de producto premium emergente.</p></div>
+    <div class="card"><span class="pill">MAR + FUEGO</span><div class="name">Fervor</div><div class="tag">Recoleta · Michelin Guide</div><p class="row">"Brasas de campo y mar". <b>~32K seg.</b> Comparte el cruce mar+fuego con toda Casa Zarautz; clásico confiable de Recoleta.</p></div>
+  </div>
+
+  <h3>Competidores indirectos — Fuego "de diseño" y ocasión</h3>
+  <div class="grid">
+    <div class="card"><span class="pill">VIRAL VISUAL</span><div class="name">Niño Gordo</div><div class="tag">Palermo · Michelin · #21 50 Best LATAM</div><p class="row">Parrilla "asiática" hiper-instagrameable (faroles rojos). <b>~211K seg.</b> Benchmark de diseño visual y viralidad orgánica, no de pauta.</p></div>
+    <div class="card"><span class="pill">ANTICUCHOS</span><div class="name">Marabunta</div><div class="tag">Brasas / anticuchos · revisar sede</div><p class="row">Brasas y anticuchos, más informal/criollo. Referencia indirecta de fuego; conviene confirmar la sede porteña exacta.</p></div>
+    <div class="card"><span class="pill">FINE DINING</span><div class="name">Tegui</div><div class="tag">Recoleta · Germán Martitegui</div><p class="row">Relanzamiento por fases (Café → Barra → fine dining 2026). Marca-chef de máxima notoriedad; compite por prestigio y agenda mediática.</p></div>
+  </div>
+
+  <div class="legend"><b>Por qué entran:</b> carne noble, fuego/parrilla, ticket alto, público AB1/foodie/turista premium y experiencia como eje. Se descartan parrillas masivas de bajo ticket.</div>
+</section>
+
+<section>
+  <span class="step-label">Paso 2</span>
+  <h2 class="title">Lectura publicitaria por competidor</h2>
+  <div class="note"><p style="margin:0;"><strong>Hallazgo transversal.</strong> El fuego premium porteño vive del <strong>orgánico + prensa + boca a boca + reservas (Meitre/web)</strong>. Don Julio, La Carnicería y Niño Gordo agotan reservas por demanda turística y viralidad; sólo Elena (vía hotel) y, en parte, los steakhouses-experiencia sostienen algo de pauta. <strong>La subasta de Meta en "carnes premium" está casi vacía.</strong></p></div>
+  <div class="grid">
+    <div class="card"><div class="name">Don Julio</div><div class="row"><b>Meta (est.):</b> <span class="lvl-bajo lvl">Nula</span></div><div class="row"><b>Objetivo:</b> ninguno; demanda desbordada.</div><div class="row"><b>Mensaje:</b> parrilla icónica, pastura, asado argentino.</div><div class="row"><b>Creatividad:</b> orgánico, prensa internacional, turismo.</div></div>
+    <div class="card"><div class="name">Elena</div><div class="row"><b>Meta (est.):</b> <span class="lvl-medio lvl">Media</span> (vía Four Seasons)</div><div class="row"><b>Objetivo:</b> eventos, brunch, ocasiones.</div><div class="row"><b>Mensaje:</b> lujo, maduración, brunch, hotel 5★.</div><div class="row"><b>Creatividad:</b> respaldo de marca hotelera.</div></div>
+    <div class="card"><div class="name">Fogón / Madre Rojas / Somos</div><div class="row"><b>Meta (est.):</b> <span class="lvl-medio lvl">Baja-media</span></div><div class="row"><b>Objetivo:</b> awareness experiencial, turismo, eventos.</div><div class="row"><b>Mensaje:</b> show del fuego, Wagyu, maduración, origen.</div><div class="row"><b>Creatividad:</b> experiencia y producto premium.</div></div>
+    <div class="card"><div class="name">La Carnicería / Niño Gordo</div><div class="row"><b>Meta (est.):</b> <span class="lvl-bajo lvl">Nula / mínima</span></div><div class="row"><b>Objetivo:</b> no captan; viralidad + turismo.</div><div class="row"><b>Mensaje:</b> producto, fuego, estética compartible.</div><div class="row"><b>Creatividad:</b> referentes de diseño e Instagrameabilidad.</div></div>
+    <div class="card"><div class="name">Corte Comedor / Fervor</div><div class="row"><b>Meta (est.):</b> <span class="lvl-bajo lvl">Baja</span></div><div class="row"><b>Objetivo:</b> recordación local, reservas puntuales.</div><div class="row"><b>Mensaje:</b> trazabilidad, maduración, "campo y mar".</div><div class="row"><b>Creatividad:</b> producto y proceso (corte, brasa, humo).</div></div>
+  </div>
+  <h4>Formatos y ofertas que aparecen (orgánico)</h4>
+  <p>Reels de "behind la parrilla", carrusel de cortes, foto de brasa y humo. Ofertas visibles: fechas especiales (Día del Padre, fiestas), menús/experiencias, eventos a cuatro manos. Casi nadie comunica el ritual del fuego ni hace retargeting de reserva.</p>
+</section>
+
+<section>
+  <span class="step-label">Paso 3</span>
+  <h2 class="title">Patrones del mercado</h2>
+  <div class="two">
+    <div class="box a"><h4 style="color:var(--maroon);">Qué hacen casi todos</h4><ul>
+      <li>Orgánico: Instagram, prensa, boca a boca.</li>
+      <li>Producto en primer plano (el corte, la brasa).</li>
+      <li>Reservas vía Meitre/web, no por Meta.</li>
+      <li>Distinciones (Michelin, 50 Best, 101 Steak) como prueba social.</li></ul></div>
+    <div class="box b"><h4>Qué hacen pocos</h4><ul>
+      <li>Meta Ads sostenido con captación (Elena/hotel y steakhouses-experiencia).</li>
+      <li>Comunicar el ritual y la experiencia del fuego.</li>
+      <li>Fechas especiales con pauta anticipada.</li>
+      <li>Video editado del fuego/origen para ads.</li></ul></div>
+  </div>
+  <div class="box" style="margin-top:22px;border-top:4px solid var(--ember);"><h4 style="color:var(--maroon);">Qué no hace casi nadie — espacios vacíos</h4><ul>
+    <li><b>El ritual del fuego</b> (el reloj de arena, el reposo de la carne, el quebracho, la terraza escondida) como gancho emocional en pauta.</li>
+    <li><b>Campañas de reservas pagadas con creativo cinematográfico.</b></li>
+    <li><b>Retargeting</b> de quien miró el menú de carnes y no reservó.</li>
+    <li><b>La pertenencia a una casa dual</b> ("la noche que arranca con fuego"), que ninguna parrilla puede ofrecer.</li></ul></div>
+</section>
+
+<section>
+  <span class="step-label">Paso 4</span>
+  <h2 class="title">Benchmark — Fuego</h2>
+  <table>
+    <thead><tr><th>Competidor</th><th>Invierte en Ads (est.)</th><th>Actividad</th><th>Tipo de mensaje</th><th>Fortalezas</th><th>Debilidades</th></tr></thead>
+    <tbody>
+      <tr><td><b>Don Julio</b></td><td>Nula</td><td class="lvl-bajo lvl">Nula</td><td>Parrilla argentina icónica</td><td>521K seg., fama mundial</td><td>Saturado; experiencia masiva/turística</td></tr>
+      <tr><td><b>Elena</b></td><td>Media</td><td class="lvl-medio lvl">Media</td><td>Lujo, maduración, brunch</td><td>Respaldo Four Seasons</td><td>Mensaje atado al hotel</td></tr>
+      <tr><td><b>La Carnicería</b></td><td>Nula</td><td class="lvl-bajo lvl">Nula</td><td>Parrilla de autor, pastura propia</td><td>Culto foodie, producto propio</td><td>Capacidad mínima; no comunica para captar</td></tr>
+      <tr><td><b>Corte Comedor</b></td><td>Baja</td><td class="lvl-bajo lvl">Baja</td><td>Trazabilidad, maduración</td><td>Relato de origen, expertise</td><td>Marca racional; poca emoción</td></tr>
+      <tr><td><b>Fogón Asado</b></td><td>Baja-media</td><td class="lvl-medio lvl">Baja-media</td><td>Show del fuego en barra</td><td>#22 mundial, experiencial</td><td>Concepto más turístico/grupal</td></tr>
+      <tr><td><b>Madre Rojas</b></td><td>Baja</td><td class="lvl-bajo lvl">Baja</td><td>Wagyu, trazabilidad</td><td>#47 mundial, nicho premium</td><td>Marca chica, alcance acotado</td></tr>
+      <tr><td><b>Somos Asado</b></td><td>Baja</td><td class="lvl-bajo lvl">Baja</td><td>Orgánico, Angus/Wagyu</td><td>Producto premium certificado</td><td>Marca emergente</td></tr>
+      <tr><td><b>Fervor</b></td><td>Baja</td><td class="lvl-bajo lvl">Baja</td><td>"Campo y mar"</td><td>Une mar+fuego; clásico</td><td>Marca poco renovada</td></tr>
+      <tr><td><b>Niño Gordo</b></td><td>Nula</td><td class="lvl-bajo lvl">Nula</td><td>Parrilla asiática visual</td><td>Diseño viral, 211K seg.</td><td>Concepto lejano; no premium-íntimo</td></tr>
+    </tbody>
+  </table>
+  <p class="legend"><b>Lectura:</b> ninguna parrilla de autor independiente disputa la subasta de Meta con campañas de reservas. Cancha despejada para La Terrazza.</p>
+</section>
+
+<section>
+  <span class="step-label">Paso 5</span>
+  <h2 class="title">Oportunidades para La Terrazza</h2>
+  <div class="qa">
+    <p class="q">1 · ¿Qué oportunidades hay?</p>
+    <p>Subasta de Meta poco disputada en carnes premium: con creativo de nivel cine y campañas de reservas/retargeting, La Terrazza capta demanda de alta intención a costo bajo mientras Don Julio, La Carnicería y Niño Gordo siguen 100% orgánicos.</p>
+    <p class="q">2 · ¿Qué mensajes están saturados?</p>
+    <p>El "corte perfecto" sin relato; el "somos Michelin/50 Best"; la foto de brasa genérica. Todos muestran producto; casi nadie comunica el ritual y la intimidad del fuego.</p>
+    <p class="q">3 · ¿Qué territorios están libres?</p>
+    <p>El <strong>ritual del fuego</strong> (el reloj de arena, el reposo de la carne, el quebracho); el <strong>refugio urbano</strong> de la terraza escondida; el <strong>retargeting de intención</strong>; y la <strong>pertenencia a Casa Zarautz</strong>.</p>
+    <p class="q">4 · ¿Cómo se diferencia La Terrazza?</p>
+    <p>No "otra parrilla", sino <strong>fuego con ritual y refugio</strong>: quebracho, humo, el reloj de arena, la terraza escondida de Palermo. La cara cálida e íntima que las parrillas masivas (Don Julio, Niño Gordo) no pueden ofrecer.</p>
+    <p class="q">5 · ¿Cómo potenciar el vínculo con Zarautz?</p>
+    <p>Posicionar La Terrazza como una de las dos caras de la casa: el contraste <strong>calor/frío, ámbar/azul, fuego/mar</strong> la hace más memorable y habilita campañas cruzadas ("¿con qué empezás?").</p>
+    <p class="q">6 · ¿Qué campañas lanzar?</p>
+    <p>Tres capas: branding del fuego con ritual (video cine), reservas con CTA directo + retargeting de quien vio el menú, y fechas especiales (Día del Padre, fiestas, aniversarios) con creativo anticipado.</p>
+  </div>
+</section>
+
+<section>
+  <span class="step-label">Paso 6</span>
+  <h2 class="title">Conclusión ejecutiva — La Terrazza</h2>
+  <div class="exec"><h3>Resumen</h3><p>El fuego premium porteño juega casi solo en orgánico: prestigio, prensa, viralidad y turismo. Salvo Elena (hotel) y los steakhouses-experiencia, nadie compite en Meta Ads con captación creativa. La subasta está despejada y La Terrazza tiene dos activos únicos: un <strong>ritual propio</strong> (el reloj de arena, la terraza escondida) y la <strong>pertenencia a Casa Zarautz</strong>. La jugada ganadora es ser la primera parrilla de autor que dispute la pauta con producción de nivel cine y campañas de reservas medibles, apalancando el contraste con Zarautz.</p></div>
+
+  <h3>Principales hallazgos</h3>
+  <ul>
+    <li>Subasta vacía en carnes premium → CPM/CPL potencialmente bajos.</li>
+    <li>Saturación de "corte/brasa": casi nadie cuenta el ritual y la intimidad del fuego.</li>
+    <li>White space del relato dual y del refugio urbano escondido.</li>
+    <li>Reservas fuera de Meta: pocos corren campañas con objetivo de reserva + retargeting.</li>
+    <li>Niño Gordo y Don Julio prueban que la estética compartible genera alcance enorme: replicable en pauta.</li>
+  </ul>
+
+  <h3>10 aprendizajes accionables</h3>
+  <ol class="ol">
+    <li>Entrar a Meta Ads ya: las carnes premium dejan la cancha libre.</li>
+    <li>Vender el ritual y la intimidad, no sólo el corte.</li>
+    <li>Hacer del contraste con Zarautz un activo de marca.</li>
+    <li>Producir creativo cinematográfico del fuego: en subasta vacía, el creativo es la ventaja.</li>
+    <li>Separar campañas por intención: branding / menú / reserva.</li>
+    <li>Retargetear a quien vio menú o web y no reservó.</li>
+    <li>Planificar fechas especiales (Día del Padre es clave) con 2–3 semanas de pauta.</li>
+    <li>Usar la paleta bordó/negro/brasa como sistema visual del fuego.</li>
+    <li>Apalancar el reloj de arena y la terraza escondida como íconos de marca.</li>
+    <li>Medir con la reserva como KPI norte (UTM a Meitre/web).</li>
+  </ol>
+
+  <h3>10 ideas de anuncios</h3>
+  <ol class="ol">
+    <li><b>El reloj de arena</b> — la carne reposa mientras cae la arena. "Lo bueno se espera."</li>
+    <li><b>"La noche arranca con fuego"</b> — invitación a empezar por La Terrazza dentro de la casa.</li>
+    <li><b>Quebracho en slow-motion</b> — humo y brasa, sonido del fuego, sin texto.</li>
+    <li><b>La terraza escondida</b> — el secreto de Palermo, refugio urbano al anochecer.</li>
+    <li><b>Mano y oficio</b> — el sellado del corte, el reposo, el emplatado.</li>
+    <li><b>"Fuego con ritual, no otra parrilla"</b> — manifiesto de diferenciación.</li>
+    <li><b>Carrusel de cortes</b> — bife / ojo / provoleta, CTA reservar.</li>
+    <li><b>Testimonio aspiracional</b> — "la cena de fuego que no olvido".</li>
+    <li><b>Fuego que abriga en invierno</b> — campaña estacional cálida.</li>
+    <li><b>Día del Padre versión fuego</b> — reserva anticipada para la fecha clave.</li>
+  </ol>
+
+  <div class="two" style="margin-top:30px;">
+    <div class="box a"><h3 style="margin-top:0;">5 campañas de reservas</h3><ol class="ol" style="margin-top:6px;">
+      <li><b>"Reservá tu noche de fuego"</b> — conversión directa a Meitre, AB1 + foodies CABA.</li>
+      <li><b>Retargeting de menú de carnes</b> — a quien vio carta/web, con experiencia (no descuento).</li>
+      <li><b>Día del Padre / fiestas / aniversarios</b> — creativo anticipado, fecha clave del fuego.</li>
+      <li><b>"Mesa de última hora"</b> — horarios valle para llenar ocupación.</li>
+      <li><b>Lookalike de reservantes</b> — audiencia similar, objetivo conversión.</li>
+    </ol></div>
+    <div class="box b"><h3 style="margin-top:0;">5 campañas de branding</h3><ol class="ol" style="margin-top:6px;">
+      <li><b>"El fuego de Casa Zarautz"</b> — manifiesto en video cinematográfico.</li>
+      <li><b>Ritual del fuego</b> — serie corta: reloj de arena, reposo, quebracho.</li>
+      <li><b>"La terraza escondida de Palermo"</b> — awareness del refugio urbano.</li>
+      <li><b>Mar vs. Fuego</b> — pieza cruzada con Zarautz (awareness de casa).</li>
+      <li><b>Estacional sensorial</b> — el fuego que abriga en invierno.</li>
+    </ol></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <h4 style="color:var(--muted);">Fuentes consultadas (verificación pública)</h4>
+  <ul>
+    <li>La Terrazza / Casa Zarautz — Instagram @casa.zarautz; El Destape; Gastronomique.</li>
+    <li>Don Julio — Instagram @donjulioparrilla; Guía Michelin; 50 Best; Infobae (101 Best Steak).</li>
+    <li>Elena — Four Seasons Buenos Aires; Guía Michelin; Instagram @elena.restaurante; El Cronista.</li>
+    <li>La Carnicería — lacarniceria.com.ar; Instagram @xlacarniceriax; 50 Best Discovery.</li>
+    <li>Corte Comedor — Guía Michelin; Instagram @cortecomedor; Tripadvisor.</li>
+    <li>Fogón Asado / Madre Rojas / Somos Asado — Infobae (World's 101 Best Steak 2026); Vidriera BA.</li>
+    <li>Fervor — fervorbrasas.com.ar; Guía Michelin; Instagram @fervorbrasas.</li>
+    <li>Niño Gordo — Instagram @xniniogordox; Guía Michelin; 50 Best LATAM.</li>
+    <li>Tegui — Vinómanos; iProfesional; La Nación; Ohlalá.</li>
+  </ul>
+  <p class="legend"><b>Limitación declarada:</b> la verificación en vivo de la Meta Ad Library no pudo completarse (bloqueo de lectura del navegador). Las columnas de actividad publicitaria son estimaciones de categoría, no conteos verificados.</p>
+</footer>
+
+</div>
+</body>
+</html>
