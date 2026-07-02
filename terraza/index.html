@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Competitivo Meta Ads · Zarautz</title>
+<style>
+  :root{
+    --olive:#74713f;
+    --olive-light:#9a9760;
+    --olive-soft:#b9b787;
+    --black:#0c0c08;
+    --ink:#1d1d15;
+    --paper:#f8f7ef;
+    --paper-2:#ffffff;
+    --line:#e2e0cf;
+    --muted:#6f6a55;
+    --sea:#3c5a5e;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+
+  /* PORTADA */
+  .cover{background:radial-gradient(circle at 50% 38%, #1c1c12 0%, var(--black) 70%);color:#fff;padding:64px 24px 60px;text-align:center;}
+  .logo-z{width:120px;height:120px;margin:0 auto 26px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .logo-z .zmark{font-family:Georgia,"Times New Roman",serif;font-size:108px;font-weight:700;color:var(--olive);line-height:1;font-style:italic;letter-spacing:-4px;position:relative;}
+  .logo-z .zmark::after{content:"Z";position:absolute;left:6px;top:6px;color:transparent;-webkit-text-stroke:1.5px var(--olive-light);font-style:italic;}
+  .cover .brand{font-family:Georgia,serif;letter-spacing:.42em;font-size:30px;font-weight:700;color:var(--olive-soft);margin:0 0 6px;padding-left:.42em;}
+  .cover .sub{letter-spacing:.3em;text-transform:uppercase;font-size:12px;color:#cfccb0;opacity:.85;}
+  .cover .kicker{margin-top:30px;letter-spacing:.26em;text-transform:uppercase;font-size:12px;color:var(--olive-soft);}
+  .cover h1{font-size:30px;margin:8px auto 0;max-width:640px;font-weight:700;color:#fff;}
+  .cover .meta{margin-top:22px;font-size:12px;color:#a8a48a;letter-spacing:.05em;}
+
+  section{padding:48px 0;border-bottom:1px solid var(--line);}
+  .step-label{display:inline-block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:8px;}
+  h2.title{font-size:29px;margin:0 0 8px;color:var(--black);font-weight:800;}
+  h3{font-size:20px;color:var(--olive);margin:32px 0 10px;}
+  h4{font-size:15px;margin:18px 0 6px;color:var(--sea);text-transform:uppercase;letter-spacing:.04em;}
+  p{margin:0 0 14px;} a{color:var(--olive);}
+
+  .note{background:#f3f2e4;border:1px solid var(--olive-light);border-left:5px solid var(--olive);border-radius:10px;padding:20px 22px;margin:22px 0;}
+  .note strong{color:var(--olive);}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:22px;}
+  .card{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+  .card .name{font-size:18px;font-weight:800;color:var(--black);}
+  .card .tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:2px 0 10px;}
+  .card .row{font-size:14px;margin:4px 0;} .card .row b{color:var(--sea);}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:10px;background:#e7e6d2;color:var(--olive);}
+
+  table{width:100%;border-collapse:collapse;margin-top:20px;font-size:13.5px;background:#fff;border-radius:10px;overflow:hidden;}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:var(--black);color:var(--olive-soft);font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+  tr:nth-child(even) td{background:#f5f4e8;}
+  .lvl{font-weight:700;}
+  .lvl-alto{color:#3c5a5e;} .lvl-medio{color:#8a7a1f;} .lvl-bajo{color:#8a5a2f;}
+
+  .ol{counter-reset:item;list-style:none;padding:0;margin:18px 0 0;}
+  .ol li{counter-increment:item;position:relative;padding:14px 16px 14px 56px;background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;}
+  .ol li::before{content:counter(item);position:absolute;left:14px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--olive);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:720px){.two{grid-template-columns:1fr;}}
+  .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;}
+  .box.a{border-top:4px solid var(--olive);} .box.b{border-top:4px solid var(--sea);}
+
+  .qa .q{font-weight:800;color:var(--black);margin-top:22px;}
+  .exec{background:radial-gradient(circle at 30% 20%,#1c1c12,var(--black));color:#fff;border-radius:14px;padding:30px;margin-top:18px;}
+  .exec h3{color:var(--olive-soft);margin-top:0;} .exec p{opacity:.95;}
+  .mini{font-size:11px;padding:2px 9px;border-radius:14px;background:#e7e6d2;color:var(--olive);}
+  footer{padding:32px 0 60px;font-size:12px;color:var(--muted);} footer ul{padding-left:18px;}
+  .legend{font-size:12px;color:var(--muted);margin-top:10px;} .legend b{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="logo-z"><span class="zmark">Z</span></div>
+  <div class="brand">ZARAUTZ</div>
+  <div class="sub">Casa Zarautz · La experiencia de mar</div>
+  <div class="kicker">Análisis Competitivo · Meta Ads</div>
+  <h1>Competencia de mar y mariscos premium en Buenos Aires y mapa de oportunidades publicitarias</h1>
+  <div class="meta">Preparado para BBPR · Junio 2026 · 🌊 Mar</div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <span class="step-label">Nota metodológica</span>
+  <h2 class="title">Cómo leer este informe</h2>
+  <div class="note">
+    <p>No fue posible verificar en vivo, anuncio por anuncio, la <em>Meta Ad Library</em> en esta sesión (bloqueo de lectura del navegador + la biblioteca es 100% JavaScript). Para no inventar conteos, se distinguen dos niveles de evidencia:</p>
+    <p style="margin:0;"><span class="mini">✓ VERIFICADO</span> concepto, chef, barrio, ticket, seguidores y distinciones (fuentes al pie). &nbsp; <span class="mini" style="background:#e9ddd0;color:#8a5a2f;">◐ LECTURA DE CATEGORÍA</span> interpretación estratégica del comportamiento publicitario probable; <strong>no</strong> es conteo verificado de anuncios.</p>
+  </div>
+  <p>Logo y colores recreados según la identidad de Zarautz (verde oliva sobre negro). Si se dejan los archivos originales en la carpeta, se reemplazan por los logos reales.</p>
+</section>
+
+<section>
+  <span class="step-label">Paso 1</span>
+  <h2 class="title">Mapa de competencia — Mar</h2>
+  <p>Zarautz, dirigido por el chef Leandro Leyell, es la experiencia de mar de Casa Zarautz: pescados y mariscos. Su competencia es el segmento <strong>premium de mar</strong> porteño, que se reparte entre mar de autor, cebicherías de alta gama y marisquerías clásicas.</p>
+
+  <h3>Competidores directos — Mar de autor</h3>
+  <div class="grid">
+    <div class="card"><span class="pill">MAR DE AUTOR</span><div class="name">Crizia</div><div class="tag">Palermo · ⭐ Michelin + Estrella Verde · 50 Best</div><p class="row">El referente. Carta 100% mar, ostras como emblema, huerta propia, cava vidriada de 350+ etiquetas, producto trazable. <b>~57K seg.</b> El espejo más directo de Zarautz.</p></div>
+    <div class="card"><span class="pill">MAR ELEGANTE</span><div class="name">Roux</div><div class="tag">Recoleta · Michelin Guide</div><p class="row">Cocina de autor clásica con foco en pescados y mariscos de origen. <b>~50K seg.</b> Compite por el "mar fino" de ocasión, desde el fine dining.</p></div>
+    <div class="card"><span class="pill">MAR + FUEGO</span><div class="name">Fervor</div><div class="tag">Recoleta · Michelin Guide</div><p class="row">"Brasas de campo y mar": la mejor parrillada mixta de mariscos de la ciudad. <b>~32K seg.</b> El competidor que ya combina mar y fuego — comparte ADN con toda Casa Zarautz.</p></div>
+  </div>
+
+  <h3>Competidores directos — Cebicherías / nikkei premium</h3>
+  <div class="grid">
+    <div class="card"><span class="pill">PERUANO</span><div class="name">La Mar</div><div class="tag">Palermo Hollywood · Gastón Acurio</div><p class="row">Cebichería peruana de marca internacional (34 locales / 11 países). Mar fresco en mansión. Marketing más profesionalizado que el promedio local.</p></div>
+    <div class="card"><span class="pill">NIKKEI</span><div class="name">Osaka</div><div class="tag">Colegiales · 50 Best Discovery</div><p class="row">Nikkei (Perú + Japón), reabierto en nuevo polo. Ticket ~$45.000 p/p. Marca regional multi-sede con vocación de eventos y coctelería.</p></div>
+    <div class="card"><span class="pill">CEBICHERÍA</span><div class="name">Grau Cebichería</div><div class="tag">Abasto · chef Raúl Zorrilla</div><p class="row">Exhibidor refrigerado con pescado del día del Atlántico; el comensal elige y el chef prepara. Propuesta de frescura y origen muy fuerte; competidor emergente de mar.</p></div>
+    <div class="card"><span class="pill">PERUANO CASUAL</span><div class="name">Tanta</div><div class="tag">Acurio · criolla peruana</div><p class="row">Hermano casual de La Mar. Toca el público peruano/mar pero a ticket menor; competidor indirecto por ocasión cotidiana.</p></div>
+  </div>
+
+  <h3>Competidores indirectos — Marisquerías y ocasión premium</h3>
+  <div class="grid">
+    <div class="card"><span class="pill">MARISQUERÍA</span><div class="name">La Pescadería</div><div class="tag">Núñez / Palermo</div><p class="row">Pescado a la brasa de quebracho, pesca de estación. Cruza mar + fuego de manera más informal; referencia de producto.</p></div>
+    <div class="card"><span class="pill">CLÁSICO</span><div class="name">La Pescadorita</div><div class="tag">Palermo Hollywood</div><p class="row">Clásico de pescado fresco de Mar del Plata y sur argentino. Marca tradicional, baja sofisticación digital.</p></div>
+    <div class="card"><span class="pill">FINE DINING</span><div class="name">Aramburu</div><div class="tag">Recoleta · ⭐⭐ Michelin</div><p class="row">Único 2★ del país, degustación ~18 pasos (~$360.000). <b>~115K seg.</b> Compite por la ocasión-experiencia premium, no por producto de mar.</p></div>
+  </div>
+
+  <div class="legend"><b>Por qué entran:</b> producto de mar noble, ticket alto, público AB1/foodie/turista premium y experiencia como eje. Se descartan pescaderías masivas y delivery.</div>
+</section>
+
+<section>
+  <span class="step-label">Paso 2</span>
+  <h2 class="title">Lectura publicitaria por competidor</h2>
+  <div class="note"><p style="margin:0;"><strong>Hallazgo transversal.</strong> El mar premium porteño vive del <strong>orgánico + prensa + boca a boca + reservas (Meitre/web)</strong>. Crizia y Roux agotan reservas por prestigio; sólo las marcas-cadena (La Mar, Osaka) sostienen algo de pauta por estructura. <strong>La subasta de Meta en "mar premium" está casi vacía.</strong></p></div>
+  <div class="grid">
+    <div class="card"><div class="name">Crizia</div><div class="row"><b>Meta (est.):</b> <span class="lvl-bajo lvl">Baja</span></div><div class="row"><b>Objetivo:</b> prestigio, no captación.</div><div class="row"><b>Mensaje:</b> producto de mar, sustentabilidad, ostra, huerta.</div><div class="row"><b>Creatividad:</b> producto en primer plano, foto cálida de autor.</div></div>
+    <div class="card"><div class="name">La Mar / Osaka</div><div class="row"><b>Meta (est.):</b> <span class="lvl-medio lvl">Media</span></div><div class="row"><b>Objetivo:</b> awareness de marca, eventos, sedes.</div><div class="row"><b>Mensaje:</b> marca internacional, frescura, coctelería.</div><div class="row"><b>Creatividad:</b> más profesionalizada (cadenas).</div></div>
+    <div class="card"><div class="name">Roux / Grau</div><div class="row"><b>Meta (est.):</b> <span class="lvl-bajo lvl">Baja / nula</span></div><div class="row"><b>Objetivo:</b> recordación, sin captación pagada.</div><div class="row"><b>Mensaje:</b> origen, pesca del día, autor.</div><div class="row"><b>Creatividad:</b> orgánico de producto y proceso.</div></div>
+    <div class="card"><div class="name">Fervor / La Pescadería</div><div class="row"><b>Meta (est.):</b> <span class="lvl-bajo lvl">Baja</span></div><div class="row"><b>Objetivo:</b> reservas puntuales, recordación local.</div><div class="row"><b>Mensaje:</b> "campo y mar", brasa de quebracho, frescura.</div><div class="row"><b>Creatividad:</b> producto y parrillada de mar.</div></div>
+  </div>
+  <h4>Formatos y ofertas que aparecen (orgánico)</h4>
+  <p>Reels de producto y barra de pescado, carrusel de platos, foto de ostra/ceviche. Ofertas visibles: menús/degustación, pesca del día, fechas especiales. Casi nadie comunica experiencia, ritual del mar ni retargeting de reserva.</p>
+</section>
+
+<section>
+  <span class="step-label">Paso 3</span>
+  <h2 class="title">Patrones del mercado</h2>
+  <div class="two">
+    <div class="box a"><h4 style="color:var(--olive);">Qué hacen casi todos</h4><ul>
+      <li>Orgánico: Instagram, prensa, boca a boca.</li>
+      <li>Producto en primer plano (ostra, ceviche, pescado).</li>
+      <li>Reservas vía Meitre/web, no por Meta.</li>
+      <li>Distinciones (Michelin, 50 Best) como prueba social.</li></ul></div>
+    <div class="box b"><h4>Qué hacen pocos</h4><ul>
+      <li>Meta Ads sostenido con captación (sólo cadenas).</li>
+      <li>Comunicar experiencia y frescura como relato.</li>
+      <li>Fechas especiales con pauta anticipada.</li>
+      <li>Video editado de origen/pesca para ads.</li></ul></div>
+  </div>
+  <div class="box" style="margin-top:22px;border-top:4px solid var(--olive-light);"><h4 style="color:var(--sea);">Qué no hace casi nadie — espacios vacíos</h4><ul>
+    <li><b>El relato sensorial del mar</b> (frío, brisa, sal, el destape de la ostra) como gancho emocional en pauta.</li>
+    <li><b>Campañas de reservas pagadas con creativo cinematográfico.</b></li>
+    <li><b>Retargeting</b> de quien miró el menú de mar y no reservó.</li>
+    <li><b>La pertenencia a una casa dual</b> ("empezá por el mar"), que ningún competidor de mar puede ofrecer.</li></ul></div>
+</section>
+
+<section>
+  <span class="step-label">Paso 4</span>
+  <h2 class="title">Benchmark — Mar</h2>
+  <table>
+    <thead><tr><th>Competidor</th><th>Invierte en Ads (est.)</th><th>Actividad</th><th>Tipo de mensaje</th><th>Fortalezas</th><th>Debilidades</th></tr></thead>
+    <tbody>
+      <tr><td><b>Crizia</b></td><td>Baja</td><td class="lvl-bajo lvl">Mínima</td><td>Mar + sustentabilidad</td><td>Michelin, relato verde</td><td>Casi sin captación; alcance acotado</td></tr>
+      <tr><td><b>Roux</b></td><td>Nula</td><td class="lvl-bajo lvl">Nula</td><td>Autor clásico, pescados</td><td>Solidez, mar elegante</td><td>Bajo ruido digital</td></tr>
+      <tr><td><b>Fervor</b></td><td>Baja</td><td class="lvl-bajo lvl">Baja</td><td>"Campo y mar"</td><td>Ya une mar+fuego; clásico</td><td>Marca poco renovada</td></tr>
+      <tr><td><b>La Mar</b></td><td>Media</td><td class="lvl-medio lvl">Media</td><td>Marca peruana internacional</td><td>Marketing pro, multi-país</td><td>Mensaje genérico de cadena</td></tr>
+      <tr><td><b>Osaka</b></td><td>Media</td><td class="lvl-medio lvl">Media</td><td>Nikkei, coctelería, eventos</td><td>Marca regional</td><td>Lejos del "mar argentino"</td></tr>
+      <tr><td><b>Grau</b></td><td>Nula</td><td class="lvl-bajo lvl">Nula</td><td>Pesca del día, elección</td><td>Frescura y origen fuertes</td><td>Marca emergente, poca escala</td></tr>
+      <tr><td><b>Aramburu</b></td><td>Nula</td><td class="lvl-bajo lvl">Nula</td><td>Degustación de autor</td><td>2★ Michelin, demanda total</td><td>No es competencia de producto de mar</td></tr>
+    </tbody>
+  </table>
+  <p class="legend"><b>Lectura:</b> ninguna marca de mar de autor independiente disputa la subasta de Meta con campañas de reservas. Cancha despejada para Zarautz.</p>
+</section>
+
+<section>
+  <span class="step-label">Paso 5</span>
+  <h2 class="title">Oportunidades para Zarautz</h2>
+  <div class="qa">
+    <p class="q">1 · ¿Qué oportunidades hay?</p>
+    <p>Subasta de Meta poco disputada en mar premium: con creativo de nivel cine y campañas de reservas/retargeting, Zarautz capta demanda de alta intención a costo bajo mientras Crizia/Roux siguen 100% orgánicos.</p>
+    <p class="q">2 · ¿Qué mensajes están saturados?</p>
+    <p>El "plato de mar perfecto" sin relato; el "somos Michelin/50 Best"; la foto de ceviche genérica. Todos muestran producto; casi nadie comunica la experiencia sensorial del mar.</p>
+    <p class="q">3 · ¿Qué territorios están libres?</p>
+    <p>El <strong>ritual del mar</strong> (el destape de la ostra, la pesca del día, el frescor); el <strong>retargeting de intención</strong>; y la <strong>pertenencia a Casa Zarautz</strong> ("empezá por el mar").</p>
+    <p class="q">4 · ¿Cómo se diferencia Zarautz?</p>
+    <p>Mar de autor con un giro emocional que Crizia/Roux no explotan en pauta: <strong>"el mar que se elige cuando se quiere brillar sin gritar"</strong> — frescura, ostra, destape, brisa, sensorialidad fría y luminosa.</p>
+    <p class="q">5 · ¿Cómo potenciar el vínculo con La Terrazza?</p>
+    <p>Posicionar Zarautz como una de las dos caras de una misma casa: el contraste <strong>frío/calor, azul/ámbar, mar/fuego</strong> hace a Zarautz más memorable y habilita campañas cruzadas de reserva ("¿con qué empezás?").</p>
+    <p class="q">6 · ¿Qué campañas lanzar?</p>
+    <p>Tres capas: branding del mar de autor (video cine), reservas con CTA directo + retargeting de quien vio el menú, y fechas especiales (fiestas, San Valentín, aniversarios) con creativo anticipado.</p>
+  </div>
+</section>
+
+<section>
+  <span class="step-label">Paso 6</span>
+  <h2 class="title">Conclusión ejecutiva — Zarautz</h2>
+  <div class="exec"><h3>Resumen</h3><p>El mar premium porteño juega casi solo en orgánico: prestigio, prensa y boca a boca. Salvo cadenas (La Mar, Osaka), nadie compite en Meta Ads con captación creativa. La subasta está despejada y Zarautz tiene un activo único: es una de las dos experiencias de Casa Zarautz. La jugada ganadora es ser el primer mar de autor que dispute la pauta con producción de nivel cine y campañas de reservas medibles, apalancando el contraste con La Terrazza.</p></div>
+
+  <h3>Principales hallazgos</h3>
+  <ul>
+    <li>Subasta vacía en mar premium → CPM/CPL potencialmente bajos.</li>
+    <li>Saturación de "producto": casi nadie cuenta la experiencia sensorial del mar.</li>
+    <li>White space del relato dual ("empezá por el mar").</li>
+    <li>Reservas fuera de Meta: pocos corren campañas con objetivo de reserva + retargeting.</li>
+    <li>Crizia marca el techo de prestigio; el espacio de "mar emocional y accesible-aspiracional" está libre.</li>
+  </ul>
+
+  <h3>10 aprendizajes accionables</h3>
+  <ol class="ol">
+    <li>Entrar a Meta Ads ya: el mar premium deja la cancha libre.</li>
+    <li>Vender la experiencia y el frescor, no sólo el plato.</li>
+    <li>Hacer del contraste con La Terrazza un activo de marca.</li>
+    <li>Producir creativo cinematográfico: en subasta vacía, el creativo es la ventaja.</li>
+    <li>Separar campañas por intención: branding / menú / reserva.</li>
+    <li>Retargetear a quien vio menú o web y no reservó.</li>
+    <li>Planificar fechas especiales con 2–3 semanas de pauta.</li>
+    <li>Usar la paleta olive/negro/cremas como sistema visual del mar.</li>
+    <li>Apalancar prensa y reseñas dentro del creativo, sin que sea el eje.</li>
+    <li>Medir con la reserva como KPI norte (UTM a Meitre/web).</li>
+  </ol>
+
+  <h3>10 ideas de anuncios</h3>
+  <ol class="ol">
+    <li><b>El destape de la ostra</b> en slow-motion, sonido de mar, sin texto.</li>
+    <li><b>"Empezá por el mar"</b> — invitación a elegir Zarautz dentro de la casa.</li>
+    <li><b>Pesca del día</b> — del Atlántico a la mesa, relato de origen.</li>
+    <li><b>Mano y oficio</b> — el corte del pescado, el emplatado del ceviche.</li>
+    <li><b>"El mar que elegís cuando querés brillar sin gritar"</b> — manifiesto.</li>
+    <li><b>Carrusel de mar</b> — ostra / ceviche / pescado, CTA reservar.</li>
+    <li><b>Testimonio aspiracional</b> — "la cena de mar que no olvido".</li>
+    <li><b>Frescor en verano</b> — campaña estacional sensorial fría.</li>
+    <li><b>La cava y el maridaje</b> — vino + mar, ocasión premium.</li>
+    <li><b>Fecha especial versión mar</b> — San Valentín / aniversario.</li>
+  </ol>
+
+  <div class="two" style="margin-top:30px;">
+    <div class="box a"><h3 style="margin-top:0;">5 campañas de reservas</h3><ol class="ol" style="margin-top:6px;">
+      <li><b>"Reservá tu mesa de mar"</b> — conversión directa a Meitre, AB1 + foodies CABA.</li>
+      <li><b>Retargeting de menú de mar</b> — a quien vio carta/web, con experiencia (no descuento).</li>
+      <li><b>Fechas especiales</b> — fiestas, San Valentín, aniversarios, creativo anticipado.</li>
+      <li><b>"Mesa de última hora"</b> — horarios valle para llenar ocupación.</li>
+      <li><b>Lookalike de reservantes</b> — audiencia similar, objetivo conversión.</li>
+    </ol></div>
+    <div class="box b"><h3 style="margin-top:0;">5 campañas de branding</h3><ol class="ol" style="margin-top:6px;">
+      <li><b>"El mar de Casa Zarautz"</b> — manifiesto en video cinematográfico.</li>
+      <li><b>Ritual del mar</b> — serie corta: destape, frescor, pesca del día.</li>
+      <li><b>Origen y producto</b> — del Atlántico a la mesa, trazabilidad.</li>
+      <li><b>Mar vs. Fuego</b> — pieza cruzada con La Terrazza (awareness de casa).</li>
+      <li><b>Estacional sensorial</b> — frío del mar en verano, ocasión luminosa.</li>
+    </ol></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <h4 style="color:var(--muted);">Fuentes consultadas (verificación pública)</h4>
+  <ul>
+    <li>Zarautz / Casa Zarautz — Instagram @casa.zarautz; El Destape; Gastronomique.</li>
+    <li>Crizia — Guía Michelin; Instagram @crizia_restaurant; The World's 50 Best.</li>
+    <li>Roux — rouxresto.com; Guía Michelin; Instagram @rouxresto; El Cronista.</li>
+    <li>Fervor — fervorbrasas.com.ar; Guía Michelin; Instagram @fervorbrasas.</li>
+    <li>La Mar / Tanta — lamarcebicheria.com; El Cronista; Gastroactitud.</li>
+    <li>Osaka — osakanikkei.com; El Cronista; 50 Best Discovery.</li>
+    <li>Grau / La Pescadería / La Pescadorita — RestaurantGuru; Ámbito; Buenos Aires Connect.</li>
+    <li>Aramburu — Guía Michelin; arambururesto.com.ar; Infobae.</li>
+  </ul>
+  <p class="legend"><b>Limitación declarada:</b> la verificación en vivo de la Meta Ad Library no pudo completarse (bloqueo de lectura del navegador). Las columnas de actividad publicitaria son estimaciones de categoría, no conteos verificados.</p>
+</footer>
+
+</div>
+</body>
+</html>
